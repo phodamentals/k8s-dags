@@ -1,7 +1,7 @@
 import os
 
 from airflow import DAG
-from airflow.example_dags.libs.helper import print_stuff
+# from airflow.example_dags.libs.helper import print_stuff
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 
