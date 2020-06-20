@@ -17,7 +17,7 @@ default_args = {
 dag = DAG(
     'kubernetes_sample', default_args=default_args, schedule_interval=timedelta(minutes=10), catchup=False)
 
-start = DummyOperatoar(task_id='run_this_first', dag=dag)
+start = DummyOperator(task_id='run_this_first', dag=dag)
 
 passing = KubernetesPodOperator(namespace='default',
                           image="python:3.6",
