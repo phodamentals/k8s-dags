@@ -28,6 +28,7 @@ small = KubernetesPodOperator(
     name="small-test",
     task_id="small-task",
     get_logs=True,
+    startup_timeout_seconds=300
     dag=dag,
     resources={
         'request_cpu': '1000m',
@@ -47,6 +48,7 @@ medium = KubernetesPodOperator(
     name="medium-test",
     task_id="medium-task",
     get_logs=True,
+    startup_timeout_seconds=300
     dag=dag,
     resources={
         'request_cpu': '2000m',
@@ -66,6 +68,7 @@ twoxlarge = KubernetesPodOperator(
     name="twoxlarge-test",
     task_id="twoxlarge-task",
     get_logs=True,
+    startup_timeout_seconds=300
     dag=dag,
     resources={
         'request_cpu': '8000m',
