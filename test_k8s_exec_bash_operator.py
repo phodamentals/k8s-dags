@@ -24,7 +24,7 @@ start = DummyOperator(task_id='run_this_first', dag=dag)
 small = BashOperator(
     # namespace='default',
     # image="python:3.6",
-    # bash_command=["python","-c"],
+    bash_command=["python","-c"],
     # arguments=["print('hello world')"],
     # labels={"foo": "bar"},
     name="small-test",
@@ -34,6 +34,7 @@ small = BashOperator(
     dag=dag,
     executor_config={
         "KubernetesExecutor":{
+            'image': 'python:3.6',
             'request_cpu': '1000m',
             'request_memory': '2Gi',
             'limit_cpu': '1000m',
@@ -45,7 +46,7 @@ small = BashOperator(
 medium = BashOperator(
     # namespace='default',
     # image="python:3.6",
-    # bash_command=["python","-c"],
+    bash_command=["python","-c"],
     # arguments=["print('hello world')"],
     # labels={"foo": "bar"},
     name="medium-test",
@@ -55,6 +56,7 @@ medium = BashOperator(
     dag=dag,
     executor_config={
         "KubernetesExecutor":{
+            'image': 'python:3.6',
             'request_cpu': '2000m',
             'request_memory': '3Gi',
             'limit_cpu': '2000m',
@@ -66,7 +68,7 @@ medium = BashOperator(
 twoxlarge = BashOperator(
     # namespace='default',
     # image="python:3.6",
-    # bash_command=["python","-c"],
+    bash_command=["python","-c"],
     # arguments=["print('hello world')"],
     # labels={"foo": "bar"},
     name="twoxlarge-test",
@@ -76,6 +78,7 @@ twoxlarge = BashOperator(
     dag=dag,
     executor_config={
         "KubernetesExecutor":{
+            'image': 'python:3.6',
             'request_cpu': '8000m',
             'request_memory': '24Gi',
             'limit_cpu': '8000m',
