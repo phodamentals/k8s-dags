@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.bash_operator import BashOperator
 
 default_args = {
     'owner': 'airflow',
@@ -20,7 +21,7 @@ dag = DAG('test_k8s_exec_py_operator', default_args=default_args, schedule_inter
 start = DummyOperator(task_id='run_this_first', dag=dag)
 
 # specs of t2.small
-small = PythonOperator(
+small = BashOperator(
     namespace='default',
     image="python:3.6",
     cmds=["python","-c"],
@@ -41,7 +42,7 @@ small = PythonOperator(
 )
 
 # specs of t2.medium
-medium = PythonOperator(
+medium = BashOperator(
     namespace='default',
     image="python:3.6",
     cmds=["python","-c"],
@@ -62,7 +63,7 @@ medium = PythonOperator(
 )
 
 # specs of t2.2xlarge
-twoxlarge = PythonOperator(
+twoxlarge = BashOperator(
     namespace='default',
     image="python:3.6",
     cmds=["python","-c"],
