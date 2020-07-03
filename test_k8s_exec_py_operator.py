@@ -31,10 +31,11 @@ small = PythonOperator(
     startup_timeout_seconds=600,
     dag=dag,
     executor_config={
-        "KubernetesExecutor": {'request_cpu': '1000m',
-                                'request_memory': '2Gi',
-                                'limit_cpu': '1000m',
-                                'limit_memory': '2Gi'}}
+        "KubernetesExecutor":{
+            'request_cpu': '1000m',
+            'request_memory': '2Gi',
+            'limit_cpu': '1000m',
+            'limit_memory': '2Gi'}
     }
 )
 
@@ -51,10 +52,11 @@ medium = PythonOperator(
     startup_timeout_seconds=600,
     dag=dag,
     executor_config={
-    "KubernetesExecutor": {'request_cpu': '2000m',
-                            'request_memory': '3Gi',
-                            'limit_cpu': '2000m',
-                            'limit_memory': '4Gi'}}
+        "KubernetesExecutor":{
+            'request_cpu': '2000m',
+            'request_memory': '3Gi',
+            'limit_cpu': '2000m',
+            'limit_memory': '4Gi'}
     }
 )
 
@@ -71,10 +73,11 @@ twoxlarge = PythonOperator(
     startup_timeout_seconds=600,
     dag=dag,
     executor_config={
-        "KubernetesExecutor": {'request_cpu': '8000m',
-                                'request_memory': '24Gi',
-                                'limit_cpu': '8000m',
-                                'limit_memory': '32Gi'}}
+        "KubernetesExecutor":{
+            'request_cpu': '8000m',
+            'request_memory': '24Gi',
+            'limit_cpu': '8000m',
+            'limit_memory': '32Gi'}
     }
 )
 
