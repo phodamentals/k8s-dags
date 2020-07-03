@@ -22,11 +22,11 @@ start = DummyOperator(task_id='run_this_first', dag=dag)
 
 # specs of t2.small
 small = BashOperator(
-    namespace='default',
-    image="python:3.6",
-    bash_command=["python","-c"],
-    arguments=["print('hello world')"],
-    labels={"foo": "bar"},
+    # namespace='default',
+    # image="python:3.6",
+    # bash_command=["python","-c"],
+    # arguments=["print('hello world')"],
+    # labels={"foo": "bar"},
     name="small-test",
     task_id="small-task",
     get_logs=True,
@@ -43,11 +43,11 @@ small = BashOperator(
 
 # specs of t2.medium
 medium = BashOperator(
-    namespace='default',
-    image="python:3.6",
-    bash_command=["python","-c"],
-    arguments=["print('hello world')"],
-    labels={"foo": "bar"},
+    # namespace='default',
+    # image="python:3.6",
+    # bash_command=["python","-c"],
+    # arguments=["print('hello world')"],
+    # labels={"foo": "bar"},
     name="medium-test",
     task_id="medium-task",
     get_logs=True,
@@ -64,11 +64,11 @@ medium = BashOperator(
 
 # specs of t2.2xlarge
 twoxlarge = BashOperator(
-    namespace='default',
-    image="python:3.6",
-    bash_command=["python","-c"],
-    arguments=["print('hello world')"],
-    labels={"foo": "bar"},
+    # namespace='default',
+    # image="python:3.6",
+    # bash_command=["python","-c"],
+    # arguments=["print('hello world')"],
+    # labels={"foo": "bar"},
     name="twoxlarge-test",
     task_id="twoxlarge-task",
     get_logs=True,
