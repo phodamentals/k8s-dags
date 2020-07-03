@@ -14,7 +14,7 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
-dag = DAG('airflow_test', default_args=default_args, schedule_interval=timedelta(minutes=10), catchup=False)
+dag = DAG('test_k8s_exec_py_operator', default_args=default_args, schedule_interval=timedelta(minutes=10), catchup=False)
 
 start = DummyOperator(task_id='run_this_first', dag=dag)
 
