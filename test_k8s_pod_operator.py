@@ -58,9 +58,9 @@ medium = KubernetesPodOperator(
     # }
     resources={
         'request_cpu': '1900m',
-        'request_memory': '3Gi',
+        'request_memory': '2Gi',
         'limit_cpu': '1900m',
-        'limit_memory': '4Gi'
+        'limit_memory': '3Gi'
     }
 )
 
@@ -84,9 +84,9 @@ twoxlarge = KubernetesPodOperator(
     # }
     resources={
         'request_cpu': '1900m',
-        'request_memory': '3Gi',
+        'request_memory': '2Gi',
         'limit_cpu': '1900m',
-        'limit_memory': '4Gi'
+        'limit_memory': '3Gi'
     }
 )
 
