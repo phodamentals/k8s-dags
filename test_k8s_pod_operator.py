@@ -50,17 +50,17 @@ medium = KubernetesPodOperator(
     get_logs=True,
     startup_timeout_seconds=600,
     dag=dag,
-    # resources={
-    #     'request_cpu': '2000m',
-    #     'request_memory': '3Gi',
-    #     'limit_cpu': '2000m',
-    #     'limit_memory': '4Gi'
-    # }
     resources={
-        'request_cpu': '1900m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1900m',
-        'limit_memory': '3Gi'
+        'request_cpu': '2000m',
+        'request_memory': '3Gi',
+        'limit_cpu': '2000m',
+        'limit_memory': '4Gi'
+    }
+    # resources={
+    #     'request_cpu': '1900m',
+    #     'request_memory': '2Gi',
+    #     'limit_cpu': '1900m',
+    #     'limit_memory': '3Gi'
     }
 )
 
@@ -76,18 +76,18 @@ twoxlarge = KubernetesPodOperator(
     get_logs=True,
     startup_timeout_seconds=600,
     dag=dag,
-    # resources={
-    #     'request_cpu': '8000m',
-    #     'request_memory': '24Gi',
-    #     'limit_cpu': '8000m',
-    #     'limit_memory': '32Gi'
-    # }
     resources={
-        'request_cpu': '1900m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1900m',
-        'limit_memory': '3Gi'
+        'request_cpu': '8000m',
+        'request_memory': '24Gi',
+        'limit_cpu': '8000m',
+        'limit_memory': '32Gi'
     }
+    # resources={
+    #     'request_cpu': '1900m',
+    #     'request_memory': '2Gi',
+    #     'limit_cpu': '1900m',
+    #     'limit_memory': '3Gi'
+    # }
 )
 
 small.set_upstream(start)
