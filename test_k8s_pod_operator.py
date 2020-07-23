@@ -61,7 +61,7 @@ medium = KubernetesPodOperator(
     #     'request_memory': '2Gi',
     #     'limit_cpu': '1900m',
     #     'limit_memory': '3Gi'
-    }
+    # }
 )
 
 # specs of t2.2xlarge
