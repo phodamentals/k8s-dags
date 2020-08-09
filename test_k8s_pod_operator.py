@@ -56,11 +56,17 @@ medium = KubernetesPodOperator(
     #     'limit_cpu': '2000m',
     #     'limit_memory': '4Gi'
     # }
+    # resources={
+    #     'request_cpu': '1900m',
+    #     'request_memory': '2Gi',
+    #     'limit_cpu': '1900m',
+    #     'limit_memory': '3Gi'
+    # }
     resources={
-        'request_cpu': '1900m',
+        'request_cpu': '1000m',
         'request_memory': '2Gi',
-        'limit_cpu': '1900m',
-        'limit_memory': '3Gi'
+        'limit_cpu': '1000m',
+        'limit_memory': '2Gi'
     }
 )
 
@@ -82,11 +88,17 @@ twoxlarge = KubernetesPodOperator(
     #     'limit_cpu': '8000m',
     #     'limit_memory': '32Gi'
     # }   
+    # resources={
+    #     'request_cpu': '1900m',
+    #     'request_memory': '2Gi',
+    #     'limit_cpu': '1900m',
+    #     'limit_memory': '3Gi'
+    # }
     resources={
-        'request_cpu': '1900m',
+        'request_cpu': '1000m',
         'request_memory': '2Gi',
-        'limit_cpu': '1900m',
-        'limit_memory': '3Gi'
+        'limit_cpu': '1000m',
+        'limit_memory': '2Gi'
     }
 )
 
