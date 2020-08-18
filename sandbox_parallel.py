@@ -120,7 +120,8 @@ def find_datasets(*args, **kwargs):
     for i in range(int(variableValue)):
         resetTasksStatus('{}-process_dataset'.format(i), str(kwargs['execution_date']))
 
-find_datasets = PythonOperator(
+# find_datasets = PythonOperator(
+find_datasets = KubernetesPodOperator(
     task_id="find_datasets",
     python_callable=find_datasets,
     dag=dag,
