@@ -12,6 +12,7 @@ from airflow.models import Variable
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.dummy_operator import DummyOperator
+from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
 
 import random
 
