@@ -29,13 +29,13 @@ small = KubernetesPodOperator(
     task_id="small-task",
     get_logs=True,
     startup_timeout_seconds=600,
-    dag=dag,
-    resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
-    }
+    dag=dag
+    # resources={
+    #     'request_cpu': '1000m',
+    #     'request_memory': '2Gi',
+    #     'limit_cpu': '1000m',
+    #     'limit_memory': '2Gi'
+    # }
 )
 
 # specs of t2.medium
@@ -49,25 +49,13 @@ medium = KubernetesPodOperator(
     task_id="medium-task",
     get_logs=True,
     startup_timeout_seconds=600,
-    dag=dag,
+    dag=dag
     # resources={
     #     'request_cpu': '2000m',
     #     'request_memory': '3Gi',
     #     'limit_cpu': '2000m',
     #     'limit_memory': '4Gi'
     # }
-    # resources={
-    #     'request_cpu': '1900m',
-    #     'request_memory': '2Gi',
-    #     'limit_cpu': '1900m',
-    #     'limit_memory': '3Gi'
-    # }
-    resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
-    }
 )
 
 # specs of t2.2xlarge
@@ -81,25 +69,13 @@ twoxlarge = KubernetesPodOperator(
     task_id="twoxlarge-task",
     get_logs=True,
     startup_timeout_seconds=600,
-    dag=dag,
+    dag=dag
     # resources={
     #     'request_cpu': '8000m',
     #     'request_memory': '24Gi',
     #     'limit_cpu': '8000m',
     #     'limit_memory': '32Gi'
     # }   
-    # resources={
-    #     'request_cpu': '1900m',
-    #     'request_memory': '2Gi',
-    #     'limit_cpu': '1900m',
-    #     'limit_memory': '3Gi'
-    # }
-    resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
-    }
 )
 
 small.set_upstream(start)
