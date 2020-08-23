@@ -80,9 +80,10 @@ task3 = KubernetesPodOperator(
 
 stress = KubernetesPodOperator(
     namespace='default',
-    image="polinux/stress",
-    cmds=["stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s"],
-    # arguments=["stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s"],
+    image="alpine:latest",
+    cmds=["fulload() { dd if=/dev/zero of=/dev/null | dd if=/dev/zero of=/dev/null | dd if=/dev/zero of=/dev/null | dd if=/dev/zero of=/dev/null & }; fulload; read; killall dd
+"],
+    # arguments=[""],
     # labels={"foo": "bar"},
     name="stress-test",
     task_id="stress-task",
