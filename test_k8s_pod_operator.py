@@ -18,15 +18,15 @@ dag = DAG('test_k8s_pod_operator', default_args=default_args, schedule_interval=
 
 start = DummyOperator(task_id='run_this_first', dag=dag)
 
-# specs of t2.small
-small = KubernetesPodOperator(
+# task1
+task1 = KubernetesPodOperator(
     namespace='default',
     image="python:3.6",
     cmds=["python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
-    name="small-test",
-    task_id="small-task",
+    name="task1-test",
+    task_id="task1-task",
     get_logs=True,
     startup_timeout_seconds=600,
     dag=dag
@@ -38,15 +38,15 @@ small = KubernetesPodOperator(
     # }
 )
 
-# specs of t2.medium
-medium = KubernetesPodOperator(
+# task2
+task2 = KubernetesPodOperator(
     namespace='default',
     image="python:3.6",
     cmds=["python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
-    name="medium-test",
-    task_id="medium-task",
+    name="task2-test",
+    task_id="task2-task",
     get_logs=True,
     startup_timeout_seconds=600,
     dag=dag
@@ -58,15 +58,15 @@ medium = KubernetesPodOperator(
     # }
 )
 
-# specs of t2.2xlarge
-twoxlarge = KubernetesPodOperator(
+# task3
+task3 = KubernetesPodOperator(
     namespace='default',
     image="python:3.6",
     cmds=["python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
-    name="twoxlarge-test",
-    task_id="twoxlarge-task",
+    name="task3-test",
+    task_id="task3-task",
     get_logs=True,
     startup_timeout_seconds=600,
     dag=dag
@@ -78,6 +78,26 @@ twoxlarge = KubernetesPodOperator(
     # }   
 )
 
-small.set_upstream(start)
-medium.set_upstream(small)
-twoxlarge.set_upstream(medium)
+stress = KubernetesPodOperator(
+    namespace='default',
+    image="progrium/stress",
+    cmds=["stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s"],
+    # arguments=[""],
+    # labels={"foo": "bar"},
+    name="stress-test",
+    task_id="stress-task",
+    get_logs=True,
+    startup_timeout_seconds=600,
+    dag=dag
+    # resources={
+    #     'request_cpu': '8000m',
+    #     'request_memory': '24Gi',
+    #     'limit_cpu': '8000m',
+    #     'limit_memory': '32Gi'
+    # }   
+)
+
+task1.set_upstream(start)
+task2.set_upstream(task1)
+task3.set_upstream(task2)
+stress.set_upstream(task3)
