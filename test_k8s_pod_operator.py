@@ -80,7 +80,7 @@ task3 = KubernetesPodOperator(
 
 stress = KubernetesPodOperator(
     namespace='default',
-    image="progrium/stress",
+    image="polinux/stress",
     cmds=["stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s"],
     # arguments=["stress --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s"],
     # labels={"foo": "bar"},
