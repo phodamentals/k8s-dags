@@ -81,7 +81,7 @@ task3 = KubernetesPodOperator(
 stress = KubernetesPodOperator(
     namespace='default',
     image="alpine:latest",
-    cmds="ping 0 -c 1000",
+    cmds=['ping 0 -c 1000'],
     # cmds=["fulload() { dd if=/dev/zero of=/dev/null | dd if=/dev/zero of=/dev/null | dd if=/dev/zero of=/dev/null | dd if=/dev/zero of=/dev/null & }; fulload; read; killall dd"],
     # arguments=[""],
     # labels={"foo": "bar"},
