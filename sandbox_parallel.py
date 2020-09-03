@@ -12,19 +12,26 @@ from airflow.models import Variable
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.dummy_operator import DummyOperator
+
+from airflow import DAG
 from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
 
 import random
 
 default_args = {
-    'owner': 'kevin@demandanalytics.io',
+    'owner': 'airflow',
+    'depends_on_past': False,
     'start_date': datetime.utcnow() - timedelta(days=1),
+    'email': ['airflow@example.com'],
+    'email_on_failure': False,
+    'email_on_retry': False,
     'retries': 0,
-    'retry_delay': timedelta(minutes=5),
+    'retry_delay': timedelta(minutes=5)
 }
 
-main_dag_id = 'sandbox_parallel'
-dag = DAG(main_dag_id, default_args=default_args)
+main_dag_id = 'test_k8s_pod_operator_parallel'
+dag = DAG(main_dag_id, default_args=default_args, schedule_interval=timedelta(minutes=10), catchup=False)
+
 
 def hello_world(dataset_id, **kwargs):
 
@@ -32,28 +39,24 @@ def hello_world(dataset_id, **kwargs):
 
     return
 
-# def createDynamicETL(task_id, callableFunction, args):
-#     task = PythonOperator(
-#         task_id = task_id,
-#         provide_context=True,
-#         #Eval is used since the callableFunction var is of type string
-#         #while the python_callable argument for PythonOperators only receives objects of type callable not strings.
-#         python_callable = eval(callableFunction),
-#         op_kwargs = args,
-#         xcom_push = True,
-#         dag = dag,
-#     )
-
 def createDynamicETL(task_id, callableFunction, args):
     task = KubernetesPodOperator(
-        task_id = task_id,
-        provide_context=True,
-        #Eval is used since the callableFunction var is of type string
-        #while the python_callable argument for PythonOperators only receives objects of type callable not strings.
-        python_callable = eval(callableFunction),
-        op_kwargs = args,
-        xcom_push = True,
-        dag = dag,
+        namespace='default',
+        image="python:3.6",
+        cmds=["python","-c"],
+        arguments=["print('hello world')"],
+        labels={"foo": "bar"},
+        name=task_id,
+        task_id=task_id,
+        get_logs=True,
+        startup_timeout_seconds=600,
+        dag=dag
+        # resources={
+        #     'request_cpu': '1000m',
+        #     'request_memory': '2Gi',
+        #     'limit_cpu': '1000m',
+        #     'limit_memory': '2Gi'
+        # }
     )
 
     return task
@@ -93,8 +96,8 @@ end = DummyOperator(
 
 def find_datasets(*args, **kwargs):
     #Extract table names and fields to be processed
-    num_datasets = random.randint(1, 20)
-    datasets = []
+    num_datasets = 50 #random.randint(1, 20)
+    # datasets = []
 
     print(num_datasets)
 
@@ -120,8 +123,7 @@ def find_datasets(*args, **kwargs):
     for i in range(int(variableValue)):
         resetTasksStatus('{}-process_dataset'.format(i), str(kwargs['execution_date']))
 
-# find_datasets = PythonOperator(
-find_datasets = KubernetesPodOperator(
+find_datasets = PythonOperator(
     task_id="find_datasets",
     python_callable=find_datasets,
     dag=dag,
