@@ -46,8 +46,8 @@ def createDynamicETL(task_id, callableFunction, args):
         cmds=["python","-c"],
         arguments=["print('hello world')"],
         labels={"foo": "bar"},
-        name="task_id",
-        task_id=task_id,
+        name="task1-test",
+        task_id="task1-task",
         get_logs=True,
         startup_timeout_seconds=600,
         dag=dag
