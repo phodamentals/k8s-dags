@@ -51,12 +51,6 @@ def createDynamicETL(task_id, callableFunction, args):
         get_logs=True,
         startup_timeout_seconds=600,
         dag=dag
-        # resources={
-        #     'request_cpu': '1000m',
-        #     'request_memory': '2Gi',
-        #     'limit_cpu': '1000m',
-        #     'limit_memory': '2Gi'
-        # }
     )
 
     return task
@@ -120,8 +114,8 @@ def find_datasets(*args, **kwargs):
 
 
     # Below code prevents this bug: https://issues.apache.org/jira/browse/AIRFLOW-1460
-    for i in range(int(variableValue)):
-        resetTasksStatus('{}-process_dataset'.format(i), str(kwargs['execution_date']))
+    # for i in range(int(variableValue)):
+    #     resetTasksStatus('{}-process_dataset'.format(i), str(kwargs['execution_date']))
 
 find_datasets = PythonOperator(
     task_id="find_datasets",
