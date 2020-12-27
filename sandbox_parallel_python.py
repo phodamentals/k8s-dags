@@ -86,17 +86,17 @@ ssh_hook = SSHHook(conn_id=ssh_conn)
     #     # }
     # )
 
-    task = SSHExecuteOperator(
-        task_id=task_id
-        , bash_command='sudo ' + bash_command
-        , ssh_hook=ssh_hook
-        , trigger_rule='all_done'
-        , dag = dag
-        , email_on_failure=True
-        , email='none@none.org'
-    )
+# task = SSHExecuteOperator(
+#     task_id=task_id
+#     , bash_command='sudo ' + bash_command
+#     , ssh_hook=ssh_hook
+#     , trigger_rule='all_done'
+#     , dag = dag
+#     , email_on_failure=True
+#     , email='none@none.org'
+# )
 
-    return task
+# return task
 
 
 def resetTasksStatus(task_id, execution_date):
