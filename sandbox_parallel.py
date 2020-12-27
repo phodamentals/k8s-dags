@@ -42,10 +42,10 @@ def hello_world(dataset_id, **kwargs):
 def createDynamicETL(task_id, callableFunction, args):
     task = KubernetesPodOperator(
         namespace='default',
-        image="python:3.6",
-        cmds=["python","-c"],
-        arguments=["print('hello world')"],
-        labels={"foo": "bar"},
+        image="progrium/stress",
+        cmds=["bash","-cx"],
+        arguments=["stress --cpu 4 --io 2- -vm 1--vm-bytes 128M --timeout 5s"],
+        labels={"stress": "test"},
         name="task" + str(task_id) + "-test",
         task_id="task" + str(task_id) + "-test",
         get_logs=True,
