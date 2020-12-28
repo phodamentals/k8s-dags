@@ -6,16 +6,15 @@ from airflow.operators.dummy_operator import DummyOperator
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime.utcnow() - timedelta(days=1),
+    'start_date':  datetime(2020, 12, 25),
     'email': ['airflow@example.com'],
     'email_on_failure': False,
     'email_on_retry': False,
-    'retries': 0,
-    'retry_delay': timedelta(minutes=5)
+    'retries': 1,
+    'retry_delay': timedelta(minutes=3)
 }
-
 dag = DAG(
-    'eks_scale_out_test', default_args=default_args, schedule_interval=timedelta(minutes=10), catchup=False)
+    'k8s_auto_scale_out_test', default_args=default_args)
 
 start = DummyOperator(task_id='run_this_first', dag=dag)
 
