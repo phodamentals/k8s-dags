@@ -40,16 +40,16 @@ task2 = KubernetesPodOperator(namespace='default',
                           dag=dag
                           )
 
-task3 = KubernetesPodOperator(namespace='default',
-                          image="ubuntu:1604",
-                          cmds=["sudo","apt","-y","install","stress-ng","&&","stress-ng","--cpu","64","--cpu-method all","--verify","-t","5m","--metrics-brief"],
-                          labels={"stress": "test"},
-                          name="task3-test",
-                          task_id="task3-task",
-                          get_logs=True,
-                          dag=dag
-                          )
+# task3 = KubernetesPodOperator(namespace='default',
+#                           image="ubuntu:1604",
+#                           cmds=["sudo","apt","-y","install","stress-ng","&&","stress-ng","--cpu","64","--cpu-method all","--verify","-t","5m","--metrics-brief"],
+#                           labels={"stress": "test"},
+#                           name="task3-test",
+#                           task_id="task3-task",
+#                           get_logs=True,
+#                           dag=dag
+#                           )
 
 task1.set_upstream(start)
 task2.set_upstream(start)
-task3.set_upstream(start)
+# task3.set_upstream(start)
