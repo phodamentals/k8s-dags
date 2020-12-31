@@ -186,46 +186,46 @@ task8 = KubernetesPodOperator(
     }
 )
 
-# task9
-task9 = KubernetesPodOperator(
-    namespace='default',
-    image="python:3.6",
-    cmds=["python","-c"],
-    arguments=["print('hello world')"],
-    labels={"foo": "bar"},
-    name="task9-test",
-    task_id="task9-task",
-    get_logs=True,
-    startup_timeout_seconds=300,
-    dag=dag,
-    is_delete_operator_pod=True,
-    resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
-    }
-)
-# task10
-task10 = KubernetesPodOperator(
-    namespace='default',
-    image="python:3.6",
-    cmds=["python","-c"],
-    arguments=["print('hello world')"],
-    labels={"foo": "bar"},
-    name="task10-test",
-    task_id="task10-task",
-    get_logs=True,
-    startup_timeout_seconds=300,
-    dag=dag,
-    is_delete_operator_pod=True,
-    resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
-    }
-)
+# # task9
+# task9 = KubernetesPodOperator(
+#     namespace='default',
+#     image="python:3.6",
+#     cmds=["python","-c"],
+#     arguments=["print('hello world')"],
+#     labels={"foo": "bar"},
+#     name="task9-test",
+#     task_id="task9-task",
+#     get_logs=True,
+#     startup_timeout_seconds=300,
+#     dag=dag,
+#     is_delete_operator_pod=True,
+#     resources={
+#         'request_cpu': '250m',
+#         'request_memory': '250Mi',
+#         'limit_cpu': '250m',
+#         'limit_memory': '250mi'
+#     }
+# )
+# # task10
+# task10 = KubernetesPodOperator(
+#     namespace='default',
+#     image="python:3.6",
+#     cmds=["python","-c"],
+#     arguments=["print('hello world')"],
+#     labels={"foo": "bar"},
+#     name="task10-test",
+#     task_id="task10-task",
+#     get_logs=True,
+#     startup_timeout_seconds=300,
+#     dag=dag,
+#     is_delete_operator_pod=True,
+#     resources={
+#         'request_cpu': '250m',
+#         'request_memory': '250Mi',
+#         'limit_cpu': '250m',
+#         'limit_memory': '250mi'
+#     }
+# )
 
 # stress = KubernetesPodOperator(
 #     namespace='default',
