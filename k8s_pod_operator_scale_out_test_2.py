@@ -32,10 +32,10 @@ task1 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '0.2',
-        'request_memory': '0.25Gi',
-        'limit_cpu': '0.2',
-        'limit_memory': '0.25Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -53,10 +53,10 @@ task2 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -74,10 +74,10 @@ task3 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -95,10 +95,10 @@ task4 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -116,10 +116,10 @@ task5 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -137,11 +137,11 @@ task6 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
-    }   
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
+    }
 )
 
 # task7
@@ -158,10 +158,10 @@ task7 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -179,10 +179,10 @@ task8 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
@@ -200,11 +200,11 @@ task9 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
-    }  
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
+    }
 )
 # task10
 task10 = KubernetesPodOperator(
@@ -220,10 +220,10 @@ task10 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '1000m',
-        'request_memory': '2Gi',
-        'limit_cpu': '1000m',
-        'limit_memory': '2Gi'
+        'request_cpu': '250m',
+        'request_memory': '250Mi',
+        'limit_cpu': '250m',
+        'limit_memory': '250mi'
     }
 )
 
