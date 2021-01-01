@@ -32,10 +32,10 @@ task1 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -53,10 +53,10 @@ task2 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -74,10 +74,10 @@ task3 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -95,10 +95,10 @@ task4 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -116,10 +116,10 @@ task5 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -137,10 +137,10 @@ task6 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -158,10 +158,10 @@ task7 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
@@ -179,53 +179,53 @@ task8 = KubernetesPodOperator(
     dag=dag,
     is_delete_operator_pod=True,
     resources={
-        'request_cpu': '250m',
-        'request_memory': '250Mi',
-        'limit_cpu': '250m',
-        'limit_memory': '250mi'
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
     }
 )
 
-# # task9
-# task9 = KubernetesPodOperator(
-#     namespace='default',
-#     image="python:3.6",
-#     cmds=["python","-c"],
-#     arguments=["print('hello world')"],
-#     labels={"foo": "bar"},
-#     name="task9-test",
-#     task_id="task9-task",
-#     get_logs=True,
-#     startup_timeout_seconds=300,
-#     dag=dag,
-#     is_delete_operator_pod=True,
-#     resources={
-#         'request_cpu': '250m',
-#         'request_memory': '250Mi',
-#         'limit_cpu': '250m',
-#         'limit_memory': '250mi'
-#     }
-# )
-# # task10
-# task10 = KubernetesPodOperator(
-#     namespace='default',
-#     image="python:3.6",
-#     cmds=["python","-c"],
-#     arguments=["print('hello world')"],
-#     labels={"foo": "bar"},
-#     name="task10-test",
-#     task_id="task10-task",
-#     get_logs=True,
-#     startup_timeout_seconds=300,
-#     dag=dag,
-#     is_delete_operator_pod=True,
-#     resources={
-#         'request_cpu': '250m',
-#         'request_memory': '250Mi',
-#         'limit_cpu': '250m',
-#         'limit_memory': '250mi'
-#     }
-# )
+# task9
+task9 = KubernetesPodOperator(
+    namespace='default',
+    image="python:3.6",
+    cmds=["python","-c"],
+    arguments=["print('hello world')"],
+    labels={"foo": "bar"},
+    name="task9-test",
+    task_id="task9-task",
+    get_logs=True,
+    startup_timeout_seconds=300,
+    dag=dag,
+    is_delete_operator_pod=True,
+    resources={
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
+    }
+)
+# task10
+task10 = KubernetesPodOperator(
+    namespace='default',
+    image="python:3.6",
+    cmds=["python","-c"],
+    arguments=["print('hello world')"],
+    labels={"foo": "bar"},
+    name="task10-test",
+    task_id="task10-task",
+    get_logs=True,
+    startup_timeout_seconds=300,
+    dag=dag,
+    is_delete_operator_pod=True,
+    resources={
+        'request_cpu': '175m',
+        'request_memory': '384mi',
+        'limit_cpu': '175m',
+        'limit_memory': '384mi'
+    }
+)
 
 # stress = KubernetesPodOperator(
 #     namespace='default',
@@ -239,12 +239,12 @@ task8 = KubernetesPodOperator(
 #     get_logs=True,
 #     startup_timeout_seconds=300,
 #     dag=dag
-#     # resources={
-#     #     'request_cpu': '8000m',
-#     #     'request_memory': '24Gi',
-#     #     'limit_cpu': '8000m',
-#     #     'limit_memory': '32Gi'
-#     # }   
+    # resources={
+    #     'request_cpu': '175m',
+    #     'request_memory': '384mi',
+    #     'limit_cpu': '175m',
+    #     'limit_memory': '384mi'
+    # } 
 # )
 
 task1.set_upstream(start)
@@ -255,6 +255,6 @@ task5.set_upstream(task4)
 task6.set_upstream(task5)
 task7.set_upstream(task6)
 task8.set_upstream(task7)
-# task9.set_upstream(task8)
-# task10.set_upstream(task9)
+task9.set_upstream(task8)
+task10.set_upstream(task9)
 # stress.set_upstream(task10)
