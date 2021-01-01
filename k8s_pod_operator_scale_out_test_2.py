@@ -33,9 +33,9 @@ task1 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -54,9 +54,9 @@ task2 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -75,9 +75,9 @@ task3 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -96,9 +96,9 @@ task4 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -117,9 +117,9 @@ task5 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -138,9 +138,9 @@ task6 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -159,9 +159,9 @@ task7 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -180,9 +180,9 @@ task8 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -201,9 +201,9 @@ task9 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 # task10
@@ -221,9 +221,9 @@ task10 = KubernetesPodOperator(
     is_delete_operator_pod=True,
     resources={
         'request_cpu': '175m',
-        'request_memory': '384mi',
+        'request_memory': '384Mi',
         'limit_cpu': '175m',
-        'limit_memory': '384mi'
+        'limit_memory': '384Mi'
     }
 )
 
@@ -241,9 +241,9 @@ task10 = KubernetesPodOperator(
 #     dag=dag
     # resources={
     #     'request_cpu': '175m',
-    #     'request_memory': '384mi',
+    #     'request_memory': '384Mi',
     #     'limit_cpu': '175m',
-    #     'limit_memory': '384mi'
+    #     'limit_memory': '384Mi'
     # } 
 # )
 
